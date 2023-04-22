@@ -34,13 +34,13 @@ This is a real-time discord clone built using MERN stack, WebRTC, and Socket.IO.
 ### Installation
 
 1. Clone the repository
-
-    `git clone https://github.com/GagDrag/Discord-Clone.git`
-
+    ```
+    git clone https://github.com/GagDrag/Discord-Clone.git
+    ```
 2. Install NPM packages
-
-    `npm install`
-
+    ```
+    npm install
+    ```
 3. Add the following environment variables in .env file
 
     ```
