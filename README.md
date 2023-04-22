@@ -28,7 +28,6 @@ This is a real-time discord clone built using MERN stack, WebRTC, and Socket.IO.
 ### Prerequisites
 
 - Node.js
-- MongoDB
 
 
 ### Installation
