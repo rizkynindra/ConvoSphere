@@ -8,7 +8,7 @@ This is a real-time discord clone built using MERN stack, WebRTC, and Socket.IO.
 
 
 - Authentication using JWT
-- Create channels and chat in real-time with other users
+- Create voice rooms and chat in real-time with other users
 - Video calling , voice calling , screensharing using WebRTC
 - Audio only mode
 - Friend Adding Functionality
