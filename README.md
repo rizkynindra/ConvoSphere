@@ -1,7 +1,7 @@
 
-# Discord Clone
+# ConvoSphere
 
-This is a real-time discord clone built using MERN stack, WebRTC, and Socket.IO. 
+ConvoSphere is a real-time discord clone built using MERN stack, WebRTC, and Socket.IO. 
 
 
 ## Features
