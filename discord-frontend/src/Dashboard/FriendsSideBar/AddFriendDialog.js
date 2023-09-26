@@ -5,7 +5,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import Typography from "@mui/material/Typography";
-import { validateMail } from "../../shared/utils/validators";
+import { validateMail, validatePhone } from "../../shared/utils/validators";
 import InputWithLabel from "../../shared/components/InputWithLabel";
 import CustomPrimaryButton from "../../shared/components/CustomPrimaryButton";
 import { connect } from "react-redux";
@@ -16,13 +16,13 @@ const AddFriendDialog = ({
   closeDialogHandler,
   sendFriendInvitation = () => {},
 }) => {
-  const [mail, setMail] = useState("");
+  const [phonenum, setPhonenum] = useState("");
   const [isFormValid, setIsFormValid] = useState("");
 
   const handleSendInvitation = () => {
     sendFriendInvitation(
       {
-        targetMailAddress: mail,
+        targetMailAddress: phonenum,
       },
       handleCloseDialog
     );
@@ -30,12 +30,12 @@ const AddFriendDialog = ({
 
   const handleCloseDialog = () => {
     closeDialogHandler();
-    setMail("");
+    setPhonenum("");
   };
 
   useEffect(() => {
-    setIsFormValid(validateMail(mail));
-  }, [mail, setIsFormValid]);
+    setIsFormValid(validatePhone(phonenum));
+  }, [phonenum, setIsFormValid]);
 
   return (
     <div>
@@ -46,15 +46,15 @@ const AddFriendDialog = ({
         <DialogContent>
           <DialogContentText>
             <Typography>
-              Enter e-mail address of friend which you would like to invite
+              Enter phone number of friend which you would like to invite
             </Typography>
           </DialogContentText>
           <InputWithLabel
-            label="Mail"
+            label="Phonenum"
             type="text"
-            value={mail}
-            setValue={setMail}
-            placeholder="Enter mail address"
+            value={phonenum}
+            setValue={setPhonenum}
+            placeholder="Enter phone number"
           />
         </DialogContent>
         <DialogActions>
