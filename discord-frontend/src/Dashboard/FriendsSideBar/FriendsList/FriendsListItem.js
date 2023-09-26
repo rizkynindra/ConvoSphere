@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import OnlineIndicator from "./OnlineIndicator";
 import { chatTypes, getActions } from "../../../store/actions/chatActions";
 import { connect } from "react-redux";
+import CreateRoomButton from "../../SideBar/CreateRoomButton";
 
 const FriendsListItem = ({ id, username, isOnline, setChosenChatDetails }) => {
   const handleChooseActiveConversation = () => {
@@ -38,7 +39,8 @@ const FriendsListItem = ({ id, username, isOnline, setChosenChatDetails }) => {
       >
         {username}
       </Typography>
-      {isOnline && <OnlineIndicator />}
+      { <CreateRoomButton/> }
+      {/* {isOnline && <OnlineIndicator />} */}
     </Button>
   );
 };
