@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const postRegister = async (req, res) => {
   try {
-    const { username, mail, password } = req.body;
+    const { username, mail, password, phonenum } = req.body;
 
     console.log("user register request came");
     // check if user exists
@@ -24,6 +24,7 @@ const postRegister = async (req, res) => {
       username,
       mail: mail.toLowerCase(),
       password: encryptedPassword,
+      phonenum
     });
 
     // create JWT token
@@ -38,15 +39,28 @@ const postRegister = async (req, res) => {
       }
     );
 
+    const refreshtoken = jwt.sign(
+      {
+        userId: user._id,
+        mail,
+      },
+      process.env.TOKEN_REFRESH,
+      {
+        expiresIn: "24h",
+      }
+    );
+
     res.status(201).json({
       userDetails: {
         mail: user.mail,
         token: token,
         username: user.username,
+        phonenum: user.phonenum,
         _id: user._id,
       },
     });
   } catch (err) {
+    console.log(err)
     return res.status(500).send("Error occured. Please try again");
   }
 };
