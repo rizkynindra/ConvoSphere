@@ -14,6 +14,7 @@ const RegisterPage = ({ register }) => {
   const [mail, setMail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [phonenum, setPhonenum] = useState("");
 
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -22,6 +23,7 @@ const RegisterPage = ({ register }) => {
       mail,
       password,
       username,
+      phonenum
     };
 
     register(userDetails, history);
@@ -33,9 +35,10 @@ const RegisterPage = ({ register }) => {
         mail,
         username,
         password,
+        phonenum
       })
     );
-  }, [mail, username, password, setIsFormValid]);
+  }, [mail, username, password, phonenum, setIsFormValid]);
 
   return (
     <AuthBox>
@@ -49,6 +52,8 @@ const RegisterPage = ({ register }) => {
         setUsername={setUsername}
         password={password}
         setPassword={setPassword}
+        phonenum={phonenum}
+        setPhonenum={setPhonenum}
       />
       <RegisterPageFooter
         handleRegister={handleRegister}
