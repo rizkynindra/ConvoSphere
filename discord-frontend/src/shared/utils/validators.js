@@ -5,7 +5,7 @@ export const validateLoginForm = ({ mail, password }) => {
   return isMailValid && isPasswordValid;
 };
 
-export const validateRegisterForm = ({ mail, password, username }) => {
+export const validateRegisterForm = ({ mail, password, username, phonenum }) => {
   return (
     validateMail(mail) &&
     validatePassword(password) &&
@@ -20,6 +20,11 @@ const validatePassword = (password) => {
 export const validateMail = (mail) => {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   return emailPattern.test(mail);
+};
+
+export const validatePhone = (phonenum) => {
+  const phonePattern = /^[0-9]+$/;
+  return phonePattern.test(phonenum);
 };
 
 const validateUsername = (username) => {
