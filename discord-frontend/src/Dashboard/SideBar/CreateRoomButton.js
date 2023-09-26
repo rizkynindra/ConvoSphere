@@ -1,7 +1,8 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import AddIcon from "@mui/icons-material/Add";
+import VideoCallIcon from '@mui/icons-material/VideoCall';
 import * as roomHandler from "../../realtimeCommunication/roomHandler";
+import VideoCall from "@mui/icons-material/VideoCall";
 
 const CreateRoomButton = ({ isUserInRoom }) => {
   const createNewRoomHandler = () => {
@@ -24,7 +25,7 @@ const CreateRoomButton = ({ isUserInRoom }) => {
         backgroundColor: "#5865F2",
       }}
     >
-      <AddIcon />
+      <VideoCall />
     </Button>
   );
 };
