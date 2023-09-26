@@ -6,7 +6,7 @@ const auth = require("../middleware/auth");
 const friendInvitationControllers = require("../controllers/friendInvitation/friendInvitationControllers");
 
 const postFriendInvitationSchema = Joi.object({
-  targetMailAddress: Joi.string().email(),
+  targetMailAddress: Joi.string().pattern(/^[0-9]+$/),
 });
 
 const inviteDecisionSchema = Joi.object({
