@@ -1,6 +1,8 @@
 const express = require("express");
 const http = require("http");
 const cors = require("cors");
+const https = require("https");
+const fs = require('fs');
 const mongoose = require("mongoose");
 require("dotenv").config();
 
@@ -19,6 +21,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/friend-invitation", friendInvitationRoutes);
 
 const server = http.createServer(app);
+// const server = https.createServer({
+//   key:fs.readFileSync('key.pem'),
+//   cert: fs.readFileSync('cert.pem')
+// })
 socketServer.registerSocketServer(server);
 
 mongoose
