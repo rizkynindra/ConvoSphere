@@ -2,16 +2,16 @@ docker login registry.bpjsketenagakerjaan.go.id
 pti
 welcome1
 
-docker build --platform=linux/amd64 -t jmortc-fe:1.0.10 .
-docker tag jmortc-fe:1.0.10 registry.bpjsketenagakerjaan.go.id/webrtc/jmortc-fe:1.0.10
-docker push registry.bpjsketenagakerjaan.go.id/webrtc/jmortc-fe:1.0.10
+docker build --platform=linux/amd64 -t vidcall-fe:1.0.10 .
+docker tag vidcall-fe:1.0.10 registry.bpjsketenagakerjaan.go.id/vidcall/vidcall-fe:1.0.10
+docker push registry.bpjsketenagakerjaan.go.id/vidcall/vidcall-fe:1.0.10
 
 login ke server ssh bpjstk@172.28.108.215
 bpjstk
 bpjstk
 
-docker pull registry.bpjsketenagakerjaan.go.id/webrtc/jmortc-fe:1.0.10
+docker pull registry.bpjsketenagakerjaan.go.id/vidcall/vidcall-fe:1.0.10
 
-docker run -p3002:3000 -d --name jmortc-fe registry.bpjsketenagakerjaan.go.id/webrtc/jmortc-fe:1.0.10
+docker run -p3002:3000 -d --name jmortc-fe registry.bpjsketenagakerjaan.go.id/vidcall/vidcall-fe:1.0.10
 
 <!-- docker run -p 27017:27017 -d --name mongodb mongo -->
